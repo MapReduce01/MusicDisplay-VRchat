@@ -1,0 +1,7 @@
+{
+  "name": "com.clicknium.firefox.msghost",
+  "description": "Firefox call native app and sent message to app.",
+  "type": "stdio",
+  "allowed_extensions": [ "{4c8a073b-04fd-42a2-83e9-73944558fc2d}" ],
+  "path": "%HOMEPATH%\\appdata\\local\\Clicknium\\messagehost\\chrome\\Clicknium.Web.NativeMessageHost.exe"
+}

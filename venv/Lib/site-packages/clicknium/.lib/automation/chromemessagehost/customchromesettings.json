@@ -1,0 +1,20 @@
+[
+  {
+    "BrowserName": "Vivaldi",
+    "InstallationPath": "",
+    "ExeName": "vivaldi.exe",
+    "ProcessName": "vivaldi",
+    "AppRegistryName": "vivaldi.exe",
+    "UninstallRegistryName": "Vivaldi",
+    "UserDataPath": "%localappdata%\\Vivaldi\\User Data"
+  },
+  {
+    "BrowserName": "Brave",
+    "InstallationPath": "",
+    "ExeName": "brave.exe",
+    "ProcessName": "brave",
+    "AppRegistryName": "brave.exe",
+    "UninstallRegistryName": "Brave",
+    "UserDataPath": "%localappdata%\\BraveSoftware\\Brave-Browser\\User Data"
+  }
+]

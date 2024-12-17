@@ -1,0 +1,66 @@
+Metadata-Version: 2.1
+Name: clicknium
+Version: 0.1.20
+Summary: Python package which enables GUI automation for all type of applications.
+Home-page: https://www.clicknium.com/documents
+Author: Clicknium
+Author-email: clicknium@clicknium.com
+Project-URL: Documentation, https://www.clicknium.com/documents
+Classifier: Environment :: Win32 (MS Windows)
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: pythonnet (>=3.0.0rc1)
+Requires-Dist: typing-extensions
+
+### Introduction
+![locator ref](https://www.clicknium.com/logo.svg)   
+Clicknium Python package provides methods to automate various types of applications in Windows, such as Web browsers, Windows Desktop applications, Java applications and SAP Windows GUI app, etc.  
+- No need to learn XPath or selector knowledge in advance;
+- Capture UI locators by just clicking UI controls with VS Code extension;
+- Same API for web and desktop applications;
+
+**Install [Clicknium Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=ClickCorp.clicknium) to start automation with Clicknium Python package now.**
+
+### Examples
+
+- Web browser Automation. visit [Quick start](https://www.clicknium.com/documents/tutorial/recorder/quickstart) and learn how to capture locators in [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ClickCorp.clicknium).
+```python
+from clicknium import clicknium as cc, locator, ui
+
+tab = cc.edge.open("https://www.bing.com/")
+tab.find_element(locator.new_store.bing.search_sb_form_q).set_text('clicknium')
+tab.find_element(locator.new_store.bing.svg).click()
+
+result_elements = tab.find_elements(locator.new_store.bing.a_search_result)
+for elem in result_elements:
+  print(elem.get_text())
+  elem.highlight(duration=1)
+
+tab.close()
+```
+
+- Automate 'notepad' on Windows using the same way with web browser: 
+```python
+from clicknium import clicknium as cc, locator, ui
+import subprocess
+
+process = subprocess.Popen("notepad")
+ui(locator.new_store.notepad.document_15).set_text("clicknium")
+ui(locator.new_store.notepad.document_15).clear_text('set-text')
+process.kill()
+```
+
+### More 
+ - [Documentation](https://www.clicknium.com/documents/) : Learn everything about Clicknium  
+ - [API Reference](https://www.clicknium.com/documents/references/python/) : Learn the Python APIs  
+ - Explore more in [Clicknium.com](https://www.clicknium.com)  
+ - More samples in [GitHub](https://github.com/clicknium/clicknium-samples)
+
+### Contact
+Email: clicknium@clicknium.com
